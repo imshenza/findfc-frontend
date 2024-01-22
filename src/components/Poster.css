@@ -1,0 +1,22 @@
+/* src/components/Poster.css */
+.poster {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(193, 191, 193);
+    border-radius: 5px;
+  }
+  
+  .poster-image {
+    max-width: 100%; /* Make sure the image doesn't exceed its container width */
+    height: auto; /* Maintain the image's aspect ratio */
+    margin-bottom: 5px;
+  }
+  
+  .poster-details{
+    display: flex;
+    justify-content: space-between;
+  }
+  #poster-details-text{
+    font-size: smaller;
+  }

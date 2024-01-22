@@ -1,0 +1,94 @@
+/* src/pages/HomePage.css */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .home {
+    text-align: center;
+  }
+  
+  header {
+    background-color: #34424b;
+    color: white;
+    padding: 3rem 0;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  
+  .more-options {
+    background: none;
+    border: none;
+    color: rgb(195, 192, 192);
+    cursor: pointer;
+  }
+  
+  .findfc {
+    font-size: 1.5rem;
+  }
+  
+  .login {
+    background-color: white;
+    color: #3498db;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  .more-options{
+
+  }
+  
+  .options-overlay {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    z-index: 0;
+
+  }
+  
+  .options-overlay ul {
+    list-style: none;
+    padding: 0;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+  }
+  
+  .options-overlay li {
+    padding: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  
+  .options-overlay li:hover {
+    background: #f1f1f1;
+  }
+  
+  .posters-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .poster {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: left;
+  }
+  #events{
+    margin-top: 50px;
+  }

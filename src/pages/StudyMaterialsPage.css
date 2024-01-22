@@ -1,0 +1,33 @@
+/* src/pages/StudyMaterialsPage.css */
+.study-materials-page {
+  text-align: center;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin: 10px 0;
+}
+
+select {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+  cursor: pointer;
+}
+#study-mat-button{
+    margin-top: 200px;
+}
+#study-mat-text{
+    margin-bottom: 90px;
+}
