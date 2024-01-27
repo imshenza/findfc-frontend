@@ -1,63 +1,67 @@
-header {
-    background-color: #34424b;
-    color: white;
-    padding: 3rem 0;
-  }
-  
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-  }
-  
-  .more-options {
-    background: none;
-    border: none;
-    color: rgb(195, 192, 192);
-    cursor: pointer;
-  }
-  .findfc {
-    font-size: 1.5rem;
-  }
-  
-  .login {
-    background-color: white;
-    color: #3498db;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
-  
-  
-  .options-overlay {
-    position: fixed;
-    top: 60px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    z-index: 0;
+/* src/components/Header.css */
+.header {
+  background-color: #000000; /* Header background color */
+  color: #fff; /* Text color */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+#login-button{
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+.mobile-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 
-  }
-  
-  .options-overlay ul {
-    list-style: none;
-    padding: 0;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-  }
-  
-  .options-overlay li {
-    padding: 1rem;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-  
-  .options-overlay li:hover {
-    background: #f1f1f1;
-  }
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  flex-grow: 1; /* Allow the logo to grow and take up available space */
+  text-align: center; /* Center the text within the logo */
+}
+
+.login-button {
+  margin-left: auto; /* Move login button to the right */
+}
+button{
+  color: #000000;
+  background-color: rgb(255, 255, 255);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.close-icon {
+  font-size: 24px;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+

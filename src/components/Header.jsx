@@ -1,52 +1,58 @@
-import React from 'react'
+// src/components/Header.js
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Make sure to import Link from 'react-router-dom'
 import "./Header.css"
-
 const Header = () => {
-  const [showOptions, setShowOptions] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleToggleOptions = () => {
-    setShowOptions(!showOptions);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
-  const options = [
-    { id: 1, label: 'Home', link: '/' },
-    { id: 2, label: 'Study Materials', link: '/study-materials' },
-    { id: 3, label: 'Gallery', link: '/gallery' },
-    { id: 4, label: 'Maps', link: '/maps' }, // Add your maps link or route
-  ];
   return (
-    <div>
-      {/* Header */}
-    <header>
-      <div className="header-content">
-        <div className="header-left">
-          <button onClick={handleToggleOptions} className="more-options">
-            <img src="/images/menu.png" alt="More Options" />
-          </button>
-          {showOptions && (
-              <div className="options-overlay">
-              <ul>
-                {options.map((option) => (
-                  <li key={option.id}>
-                    <Link to={option.link}>{option.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+    <header className="header">
+      <div className="mobile-header">
+        <div className="menu-icon" onClick={toggleMenu}>
+          ☰
         </div>
-        <div className="header-center">
-          <span className="findfc">FIND-FC</span>
+        <div className="logo">
+          FIND-FC
         </div>
-        <Link to="/login">
-        <div className="header-right">
-          <button className="login">Login</button>
+        <div className="login-button">
+          <Link to="/login">
+            <button id='login-button'>LOGIN</button>
+          </Link>
         </div>
-        </Link>
       </div>
-    </header>
-    </div>
-  )
-}
 
-export default Header
+      {menuOpen && (
+        <div className="menu">
+          <Link to="/" onClick={toggleMenu}>
+            Home
+          </Link>
+          <Link to="/study-materials" onClick={toggleMenu}>
+         <div className="item-icon">
+         <img src="public\images\books.svg" alt="" />
+          Study Materials
+         </div>
+          </Link>
+          <Link to="/gallery" onClick={toggleMenu}>
+          <div className="item-icon"><img src="public\images\gallery.png" alt="" />
+            Gallery</div>
+          </Link>
+          <Link to="/map" onClick={toggleMenu}>
+          <div className="item-icon">
+          <img src="public\images\map.png" alt="" />
+            Map
+          </div>
+          </Link>
+          <div className="close-icon" onClick={toggleMenu}>
+          ☰
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
+
+export default Header;

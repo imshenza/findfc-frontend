@@ -3,6 +3,7 @@ import React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
 import './GalleryPage.css';
 import BackButton from '../components/BackButton';
+import Header from '../components/Header';
 
 const GalleryPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -41,7 +42,8 @@ const GalleryPage = () => {
 
   return (
     <div className="gallery">
-      <BackButton/>
+      <Header/>
+
    
     <div className="gallery-page">
       

@@ -3,7 +3,7 @@
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
-    background-color: rgb(193, 191, 193);
+    background-color: rgb(211, 211, 211);
     border-radius: 5px;
   }
   
@@ -16,6 +16,7 @@
   .poster-details{
     display: flex;
     justify-content: space-between;
+    color: #232323;
   }
   #poster-details-text{
     font-size: smaller;

@@ -1,12 +1,11 @@
 import React from 'react'
 import './LoginPage.css';
-import BackButton from '../components/BackButton';
+import Header from '../components/Header';
 
 const LoginPage = () => {
   return (
    <div className="login">
-    
-    <BackButton/>
+    <Header/>
      <div className='loginpage'>
         <form action="">
         <h1>Login</h1>

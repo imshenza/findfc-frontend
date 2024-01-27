@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import './StudyMaterialsPage.css'; // Import the CSS file
 import BackButton from '../components/BackButton';
+import Header from '../components/Header';
 // ... rest of the code
 
 
@@ -32,8 +33,7 @@ const StudyMaterialsPage = () => {
 
   return (
     <div className="studymaterials">
-      
-      <BackButton/>
+      <Header/>
       <div className="study-materials-page">
       <h2 id='study-mat-text'>Study Materials</h2>
       <form>

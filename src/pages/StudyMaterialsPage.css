@@ -21,13 +21,11 @@ select {
 }
 
 button {
-  margin-top: 15px;
-  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
 #study-mat-button{
-    margin-top: 200px;
+  margin-top: 50%;
 }
 #study-mat-text{
-    margin-bottom: 90px;
 }

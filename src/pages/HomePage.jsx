@@ -21,39 +21,12 @@ const HomePage = () => {
 
   return (
     <div className="home">
-      {/* Header */}
-    <header>
-      <div className="header-content">
-        <div className="header-left">
-          <button onClick={handleToggleOptions} className="more-options">
-            <img src="/images/menu.png" alt="More Options" />
-          </button>
-          {showOptions && (
-              <div className="options-overlay">
-              <ul>
-                {options.map((option) => (
-                  <li key={option.id}>
-                    <Link to={option.link}>{option.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-        <div className="header-center">
-          <h1 id="findfc">FIND-FC</h1>
-        </div>
-        <Link to="/login">
-        <div className="header-right">
-          <button className="login">Login</button>
-        </div>
-        </Link>
-      </div>
-    </header>
-
+      <Header/>
       {/* Posters */}
       <main>
+        <div className="main-heading">
         <h1 id='events'>TODAY'S EVENTS</h1>
+        </div>
         <div className="posters-section">
           {/* Display posters here */}
           <Poster imageUrl={"/images/img3.png"}  time="10:00 AM" venue="Venue 1" />
