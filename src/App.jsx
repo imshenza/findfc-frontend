@@ -1,11 +1,11 @@
-
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import StudyMaterialsPage from './pages/StudyMaterialsPage';
-import GalleryPage from './pages/GalleryPage';
-import LoginPage from './pages/LoginPage';
-import Header from './components/Header';
-import MapPage from './pages/MapPage';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import StudyMaterialsPage from "./pages/StudyMaterialsPage";
+import GalleryPage from "./pages/GalleryPage";
+import LoginPage from "./pages/LoginPage";
+import Header from "./components/Header";
+import MapPage from "./pages/MapPage";
+import TestPage from "./pages/TestPage";
 
 function App() {
   return (
@@ -15,7 +15,8 @@ function App() {
         <Route path="/study-materials" element={<StudyMaterialsPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path='/map' element={<MapPage/>}/>
+        <Route path="/map" element={<MapPage />} />
+        <Route path="/test" element={<TestPage />} />
         {/* Add more routes for additional pages if needed */}
       </Routes>
     </Router>
@@ -23,4 +24,3 @@ function App() {
 }
 
 export default App;
-
