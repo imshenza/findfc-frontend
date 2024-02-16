@@ -1,49 +1,9 @@
-/* Default styles */
+/* src/components/Header.css */
+
+*{
+  text-decoration: none;
+}
 .header {
-  background-color: #000000;
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-}
-
-#login-button {
-  border-radius: 10px;
-  margin-bottom: 5px;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  flex: 1;
-}
-
-.login-button {
-  margin-left: auto;
-}
-
-button {
-  color: #000000;
-  background-color: rgb(255, 255, 255);
-}
-
-.menu {
-  display: none;
-}
-
-/* Media query for desktop view */
-@media only screen and (min-width: 768px) {
-  .menu {
-    display: flex;
-    align-items: center;
-  }
-
-  .menu-item {
-    margin-right: 20px;
-  }
-  /* src/components/Header.css */
-  .header {
     background-color: #000000; /* Header background color */
     color: #fff; /* Text color */
     padding: 20px;
@@ -107,22 +67,9 @@ button {
     cursor: pointer;
     margin-top: auto;
   }
-  body {
-    margin: 0;
-  }
-  
-  .header {
-    margin: 0 !important;
+  .back-button{
+    color: white;
   }
   
   
-  .menu-item:last-child {
-    margin-right: 0;
-  }
-
-  .menu a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-  }
-}
+  

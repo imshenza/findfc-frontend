@@ -6,6 +6,8 @@ import LoginPage from "./pages/LoginPage";
 import Header from "./components/Header";
 import MapPage from "./pages/MapPage";
 import TestPage from "./pages/TestPage";
+import AdminHome from "./pages/AdminHome";
+import UploadComponent from "./pages/UploadComponent";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/test" element={<TestPage />} />
+        <Route path="/admin" element={<AdminHome />} />
+        <Route path="/posterup" element={<UploadComponent />} />
         {/* Add more routes for additional pages if needed */}
       </Routes>
     </Router>

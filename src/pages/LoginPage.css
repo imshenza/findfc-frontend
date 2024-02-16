@@ -1,3 +1,31 @@
-input{
+.login {
+    margin: 0; /* Remove margin from the container */
+  }
+  
+  .loginpage {
+    /* Your existing styles for the login page */
+  }
+  
+  .user-name,
+  .password {
+    /* Your existing styles for input labels and fields */
+  }
+  
+  #login-button {
+    /* Your existing styles for the login button */
+  }
+  
+  /* Apply styles to the Header component */
+  .Header {
+    margin: 0; /* Remove margin from the Header component */
+  }
+  
+  /* Additional styles for other elements if needed */
+  input {
     width: min-content;
-}
+  }
+  
+  body {
+    margin: 0;
+  }
+  

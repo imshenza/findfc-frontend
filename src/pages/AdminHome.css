@@ -1,0 +1,25 @@
+.header {
+    text-align: center;
+  }
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px; /* Increase padding to make buttons bigger */
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    cursor: pointer; /* Cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .button:hover {
+    background-color: #45a049; /* Darker green on hover */
+  }
+  
