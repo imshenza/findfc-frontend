@@ -11,8 +11,13 @@ const AdminHome = () =>
           <Link to="/posterup">
           <button className="button">Posters</button>
           </Link>
+          <Link to="/studyup">
           <button className="button">Study Materials</button>
+          </Link>
+          <Link to="/galleryup">
           <button className="button">Gallery</button>
+
+          </Link>
         </div>
       
     );

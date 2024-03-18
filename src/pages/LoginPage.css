@@ -1,5 +1,12 @@
+*{
+  margin: 0 0 0 0;
+}
+body{
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
 .login {
-    margin: 0; /* Remove margin from the container */
+    margin: 0 0 0 0; /* Remove margin from the container */
   }
   
   .loginpage {
@@ -17,7 +24,7 @@
   
   /* Apply styles to the Header component */
   .Header {
-    margin: 0; /* Remove margin from the Header component */
+    margin: 0 0 0 0; /* Remove margin from the Header component */
   }
   
   /* Additional styles for other elements if needed */
@@ -26,6 +33,6 @@
   }
   
   body {
-    margin: 0;
+    margin: 0 0 0 0;
   }
   

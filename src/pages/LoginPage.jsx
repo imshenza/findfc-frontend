@@ -1,13 +1,12 @@
 import React from 'react'
+import Header from '../components/Header'
 import './LoginPage.css';
-import Header from '../components/Header';
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   return (
-   <div className="login">
-    <Header/>
-     <div className='loginpage'>
+    <div><Header/>
+    <div className='loginpage'>
         <form action="">
         <h1>Login</h1>
         <div className="user-name"><label htmlFor="username">Username</label>
@@ -22,9 +21,8 @@ const LoginPage = () => {
         </button>
         </Link>
         </form>
-    </div>
-   </div>
+    </div></div>
   )
 }
 
-export default LoginPage
+export default LoginPage;

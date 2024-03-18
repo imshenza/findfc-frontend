@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Poster from "../components/Poster";
 import "./HomePage.css";
 import Header from "../components/Header";
+// import Navbar from "../components/Navbar";
 
 const HomePage = () => {
   const [showOptions, setShowOptions] = useState(false);
@@ -44,16 +45,17 @@ const HomePage = () => {
         })
       : null;
 
-  const options = [
-    { id: 1, label: "Home", link: "/" },
-    { id: 2, label: "Study Materials", link: "/study-materials" },
-    { id: 3, label: "Gallery", link: "/gallery" },
-    { id: 4, label: "Maps", link: "/maps" }, // Add your maps link or route
-  ];
+  // const options = [
+  //   { id: 1, label: "Home", link: "/" },
+  //   { id: 2, label: "Study Materials", link: "/study-materials" },
+  //   { id: 3, label: "Gallery", link: "/gallery" },
+  //   { id: 4, label: "Maps", link: "/maps" }, // Add your maps link or route
+  // ];
 
   return (
     <div className="home">
       <Header />
+      {/* <Navbar /> }
       {/* Posters */}
       <main>
         <div className="main-heading">

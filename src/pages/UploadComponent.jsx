@@ -1,13 +1,15 @@
 import React from 'react';
 import './UploadComponent.css';
 import AdminHeader from '../components/AdminHeader';
+import { Link } from 'react-router-dom';
 
 const UploadComponent = () => {
   return (
     <div>
       <AdminHeader />
       <div className="button-container">
-        <button className="button">Upload New</button>
+        <Link to="/posterupload">
+        <button className="button">Upload New</button></Link>
         <button className="button">View Uploaded</button>
       </div>
     </div>
