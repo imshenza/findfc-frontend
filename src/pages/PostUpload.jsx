@@ -59,6 +59,7 @@ const PostUpload = () => {
           value={selectedTime}
           onChange={handleTimeChange}
         />
+        <button type="submit" value="Upload">UPLOAD</button>
           {/* {selectedImage && (
           <button className="upload-button" onClick={handleUpload}>
             Upload

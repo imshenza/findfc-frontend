@@ -8,7 +8,9 @@ const AdminHome = () =>
     return (
       <div>
         <AdminHeader/>
-          <Link to="/posterup">
+        <div className="button-container">
+          <h1>Admin's Dashboard</h1><br /><br />
+        <Link to="/posterup">
           <button className="button">Posters</button>
           </Link>
           <Link to="/studyup">
@@ -18,6 +20,8 @@ const AdminHome = () =>
           <button className="button">Gallery</button>
 
           </Link>
+        </div>
+          
         </div>
       
     );

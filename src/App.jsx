@@ -3,17 +3,21 @@ import HomePage from "./pages/HomePage";
 import StudyMaterialsPage from "./pages/StudyMaterialsPage";
 import GalleryPage from "./pages/GalleryPage";
 import LoginPage from "./pages/LoginPage";
-// import Header from "./components/Header";
+
 import MapPage from "./pages/MapPage";
 import TestPage from "./pages/TestPage";
 import AdminHome from "./pages/AdminHome";
-import UploadComponent from "./pages/UploadComponent";
-import Header from "./components/Header";
-// import PosterUpPage from "./pages/PosterUpPage";
-import UploadComponentstudy from "./pages/UploadComponentstudy";
-import UploadComponentgall from "./pages/UploadComponentgall";
+
+import AdGalleryPage from "./pages/AdGalleryPage";
+import AdPosterPage from "./pages/AdPosterPage";
+import AdStudyMaterialPage from "./pages/AdStudyMaterialPage";
 import PostUpload from "./pages/PostUpload";
-// import Navbar from "./components/Navbar";
+import PostView from "./pages/PostView";
+import GallUpload from "./pages/GallUpload";
+import GallView from "./pages/GallView";
+import StudyUpload from "./pages/StudyUpload";
+import StudyView from "./pages/StudyView";
+
 
 function App() {
   return (
@@ -26,10 +30,15 @@ function App() {
         <Route path="/map" element={<MapPage />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/admin" element={<AdminHome />} />
-        <Route path="/posterup" element={<UploadComponent />} />
-        <Route path="/studyup" element={<UploadComponentstudy />} />
-        <Route path="/galleryup" element={<UploadComponentgall />} />
+        <Route path="/posterup" element={<AdPosterPage />} /> 
+        <Route path="/studyup" element={<AdStudyMaterialPage />} />
+        <Route path="/galleryup" element={<AdGalleryPage />} />
         <Route path="/posterupload" element={<PostUpload />} />
+        <Route path="/posterview" element={<PostView />} />
+        <Route path="/galleryupload" element={<GallUpload />} />
+        <Route path="/galleryview" element={<GallView />} />
+        <Route path="/studyupload" element={<StudyUpload />} />
+        <Route path="/studyview" element={<StudyView />} />
         {/* <Route path="/posterupload" element={<PosterUpPage />} /> */}
         {/* Add more routes for additional pages if needed */}
       </Routes>
