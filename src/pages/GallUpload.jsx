@@ -1,8 +1,11 @@
 import React from 'react'
+import AdminHeader from '../components/AdminHeader'
 
 const GallUpload = () => {
   return (
-    <div>GallUpload</div>
+    <div>
+      <AdminHeader/>
+      GallUpload</div>
   )
 }
 

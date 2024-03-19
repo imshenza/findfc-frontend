@@ -1,8 +1,11 @@
 import React from 'react'
+import AdminHeader from '../components/AdminHeader'
 
 const GallView = () => {
   return (
-    <div>GallView</div>
+    <div>
+<AdminHeader/>
+      GallView</div>
   )
 }
 

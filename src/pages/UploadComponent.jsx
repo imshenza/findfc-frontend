@@ -27,7 +27,7 @@ const UploadComponent = ({ uploadLink, viewLink }) => {
     <div className="all">
 
 <div className="button-container">
-      <ButtonLink to={uploadLink} text="Upload New" />
+      <ButtonLink to={uploadLink} text="Upload New" /><br /><br />
       <ButtonLink to={viewLink} text="View Uploaded" />
     </div>
     </div>

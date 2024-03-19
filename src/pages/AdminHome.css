@@ -3,7 +3,7 @@
   }
   
   .button-container {
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     text-align: center;
   }
   
@@ -23,4 +23,8 @@
   .button:hover {
     background-color: #45a049; /* Darker green on hover */
   }
+  .page-heading{
+    margin-top: 3rem;
+    text-align: center;
+}
   

@@ -1,8 +1,11 @@
 import React from 'react'
+import AdminHeader from '../components/AdminHeader'
 
 const PostView = () => {
   return (
-    <div>PostView</div>
+    <div>
+      <AdminHeader/>
+      PostView</div>
   )
 }
 

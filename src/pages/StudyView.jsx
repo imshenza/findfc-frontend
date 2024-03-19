@@ -1,8 +1,11 @@
 import React from 'react'
+import AdminHeader from '../components/AdminHeader'
 
 const StudyView = () => {
   return (
-    <div>StudyView</div>
+    <div>
+      <AdminHeader/>
+      StudyView</div>
   )
 }
 

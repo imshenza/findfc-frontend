@@ -9,13 +9,13 @@ const AdminHome = () =>
       <div>
         <AdminHeader/>
         <div className="button-container">
-          <h1>Admin's Dashboard</h1><br /><br />
+          <h1 className='page-heading'>Admin's Dashboard</h1><br /><br />
         <Link to="/posterup">
           <button className="button">Posters</button>
-          </Link>
+          </Link><br /><br />
           <Link to="/studyup">
           <button className="button">Study Materials</button>
-          </Link>
+          </Link><br /><br />
           <Link to="/galleryup">
           <button className="button">Gallery</button>
 

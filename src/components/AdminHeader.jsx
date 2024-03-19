@@ -22,7 +22,7 @@ const AdminHeader = () => {
         </div>
         <div className="login-button">
           <Link to="/login">
-            <button id='login-button'>LOGOUT</button>
+            <button id='login-button' onClick=''>LOGOUT</button>
           </Link>
         </div>
       </div>

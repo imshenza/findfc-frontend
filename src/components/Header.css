@@ -1,4 +1,4 @@
-/* Default styles */
+/* 
 
 .header {
   background-color: #000000;
@@ -33,7 +33,7 @@ button {
   display: none;
 }
 
-/* Media query for desktop view */
+
 @media only screen and (min-width: 768px) {
   .menu {
     display: flex;
@@ -43,10 +43,10 @@ button {
   .menu-item {
     margin-right: 20px;
   }
-  /* src/components/Header.css */
+ 
   .header {
-    background-color: #000000; /* Header background color */
-    color: #fff; /* Text color */
+    background-color: #000000;
+    color: #fff; 
     padding: 20px;
     display: flex;
     align-items: center;
@@ -70,12 +70,12 @@ button {
   .logo {
     font-size: 20px;
     font-weight: bold;
-    flex-grow: 1; /* Allow the logo to grow and take up available space */
-    text-align: center; /* Center the text within the logo */
+    flex-grow: 1;
+    text-align: center;
   }
   
   .login-button {
-    margin-left: auto; /* Move login button to the right */
+    margin-left: auto; 
   }
   button{
     color: #000000;
@@ -125,5 +125,102 @@ button {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
+  }
+} */
+
+/* Common styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #00050b; /* Dark blue */
+  color: white;
+}
+
+.navbar__button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar__logo {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar__icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(0, 0, 0,0.999); /* Semi-transparent black */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above other content */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar__menu.open {
+  transform: translateX(0%);
+}
+
+.navbar__list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.navbar__item {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.navbar__item a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar__item:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent white on hover */
+}
+
+.navbar__item.active {
+  background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent white for active tab */
+}
+
+@media (min-width: 768px) {
+  .navbar__menu {
+    display: flex;
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    transform: none;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .navbar__icon {
+    display: none;
+  }
+
+  .navbar__list {
+    flex-direction: row;
+  }
+
+  .navbar__item {
+    padding: 0 1rem;
   }
 }
