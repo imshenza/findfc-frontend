@@ -1,75 +1,55 @@
-/* src/components/Header.css */
+/* src/components/AdminHeader.css */
 
-*{
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #00050b; /* Dark blue */
+  color: white;
+}
+
+.navbar__left {
+  flex: 1;
+  text-align: left;
+}
+
+.navbar__center {
+  flex: 1;
+  text-align: center;
+}
+
+.navbar__logo {
+  font-size: 1.8rem;
+  color: white;
+  text-decoration: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar__right {
+  flex: 1;
+  text-align: right;
+}
+
+.navbar__button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.back-btn {
+  font-size: 1.2rem;
+  color: white;
   text-decoration: none;
 }
-.header {
-    background-color: #000000; /* Header background color */
-    color: #fff; /* Text color */
-    padding: 20px;
-    display: flex;
-    align-items: center;
-  }
-  #login-button{
-    border-radius: 10px;
-    margin-bottom: 5px;
-  }
-  .mobile-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
+
+@media (max-width: 768px) {
+  .navbar__left {
+    flex-basis: auto;
   }
   
-  .menu-icon {
-    font-size: 24px;
-    cursor: pointer;
-    margin-right: 10px;
+  .navbar__right {
+    flex-basis: auto;
   }
-  
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-    flex-grow: 1; /* Allow the logo to grow and take up available space */
-    text-align: center; /* Center the text within the logo */
-  }
-  
-  .login-button {
-    margin-left: auto; /* Move login button to the right */
-  }
-  button{
-    color: #000000;
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #fff;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .close-icon {
-    font-size: 24px;
-    cursor: pointer;
-    margin-top: auto;
-  }
-  .back-button{
-    color: white;
-  }
-  
-  
-  
+}

@@ -1,8 +1,7 @@
+// src/pages/StudyMaterialsPage.js
 import React, { useState } from 'react';
 import './StudyMaterialsPage.css'; // Import the CSS file
-import BackButton from '../components/BackButton';
 import Header from '../components/Header';
-// ... rest of the code
 
 const StudyMaterialsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -55,35 +54,25 @@ const StudyMaterialsPage = () => {
       <div className="study-materials-page">
         <h2 id="study-mat-text">Study Materials</h2>
         <form>
-          {/* Dropdown for Category (UG/PG) */}
-          <label>
-            Category:
-            <select className='values' value={selectedCategory} onChange={handleCategoryChange}>
-              <option value="">Select Category</option>
-              <option value="UG">UG</option>
-              <option value="PG">PG</option>
-            </select>
-          </label>
+          <label htmlFor="category">Category:</label>
+          <select id="category" value={selectedCategory} onChange={handleCategoryChange}>
+            <option value="">Select Category</option>
+            <option value="UG">UG</option>
+            <option value="PG">PG</option>
+          </select>
 
-          {/* Dropdown for Year (1, 2, 3 based on Category) */}
-          <label>
-            Year:
-            <select className='values' value={selectedYear} onChange={handleYearChange}>
-              {yearOptions}
-            </select>
-          </label>
+          <label htmlFor="year">Year:</label>
+          <select id="year" value={selectedYear} onChange={handleYearChange}>
+            {yearOptions}
+          </select>
 
-          {/* Dropdown for Material Type (Notes, Textbooks, Previous Year Papers) */}
-          <label>
-            Material Type:
-            <select className='values' value={selectedType} onChange={handleTypeChange}>
-              <option value="">Select Material Type</option>
-              <option value="Notes">Notes</option>
-              <option value="Previous Year Papers">Previous Year Papers</option>
-            </select>
-          </label>
+          <label htmlFor="type">Material Type:</label>
+          <select id="type" value={selectedType} onChange={handleTypeChange}>
+            <option value="">Select Material Type</option>
+            <option value="Notes">Notes</option>
+            <option value="Previous Year Papers">Previous Year Papers</option>
+          </select>
 
-          {/* Submit Button */}
           <button type="button" id="study-mat-button" onClick={handleSubmit}>
             Submit
           </button>

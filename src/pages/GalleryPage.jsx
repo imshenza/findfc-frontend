@@ -2,7 +2,6 @@
 import React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
 import './GalleryPage.css';
-import BackButton from '../components/BackButton';
 import Header from '../components/Header';
 
 const GalleryPage = () => {

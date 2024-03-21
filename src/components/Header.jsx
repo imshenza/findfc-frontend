@@ -57,7 +57,7 @@ const Header = () => {
           </ul>
           {isOpen && (
             <button className="navbar__close-btn" onClick={toggleMenu}>
-              X
+              ✕
             </button>
           )}
         </div>

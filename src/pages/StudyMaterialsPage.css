@@ -1,31 +1,60 @@
 /* src/pages/StudyMaterialsPage.css */
 .study-materials-page {
-  text-align: center;
-  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Align contents to center */
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
   align-items: center;
 }
 
 label {
-  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
+input,
 select {
-  margin: 5px;
-  padding: 5px;
-  border-radius: 100px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
 }
 
 button {
+  border: none;
   border-radius: 5px;
+  padding: 8px 20px;
+  background-color: #3d3d52;
+  color: white;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: background-color 0.3s;
+  justify-self: center; /* Center the button horizontally */
+  grid-column: span 2; /* Make the button span across both columns */
 }
-#study-mat-button{
-  margin-top: 5%;
+
+button:hover {
+  background-color: #545d66;
 }
-#study-mat-text{
+
+#study-mat-text {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
