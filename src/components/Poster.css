@@ -77,3 +77,9 @@ button {
     margin-bottom: 0; /* Reset margin bottom */
   }
 }
+button{
+  
+}
+.editbtn{
+display: flex;
+}

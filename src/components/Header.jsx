@@ -56,9 +56,9 @@
 // };
 
 // export default Header;
-import './Header.css'
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import './Header.css'; // Import your CSS file
 
 const Header = () => {
   const location = useLocation();
@@ -85,43 +85,47 @@ const Header = () => {
         <span className="navbar__icon" onClick={toggleMenu}>
           {isOpen ? '✕' : '☰'}
         </span>
+        <div className={`navbar__menu ${isOpen ? 'open' : ''}`}>
+          <ul className="navbar__list">
+            <li
+              className={`navbar__item ${activeTab === 'findfc' ? 'active' : ''}`}
+              onClick={() => handleTabClick('findfc')}
+            >
+              <Link to="/">Home</Link>
+            </li>
+            <li
+              className={`navbar__item ${activeTab === 'gallery' ? 'active' : ''}`}
+              onClick={() => handleTabClick('gallery')}
+            >
+              <Link to="/gallery">Gallery</Link>
+            </li>
+            <li
+              className={`navbar__item ${activeTab === 'study-materials' ? 'active' : ''}`}
+              onClick={() => handleTabClick('study-materials')}
+            >
+              <Link to="/study-materials">Study Materials</Link>
+            </li>
+            <li
+              className={`navbar__item ${activeTab === 'map' ? 'active' : ''}`}
+              onClick={() => handleTabClick('map')}
+            >
+              <Link to="/map">Map</Link>
+            </li>
+          </ul>
+          {isOpen && (
+            <button className="navbar__close-btn" onClick={toggleMenu}>
+              X
+            </button>
+          )}
+        </div>
       </div>
       <div className="navbar__center">
         <Link to="/" className="navbar__logo">findfc</Link>
       </div>
       <div className="navbar__right">
         <Link to='/login'>
-        <button className="navbar__button">Login</button>
+          <button className="navbar__button">Login</button>
         </Link>
-        
-      </div>
-      <div className={`navbar__menu ${isOpen ? 'open' : ''}`}>
-        <ul className="navbar__list">
-          <li
-            className={`navbar__item ${activeTab === 'findfc' ? 'active' : ''}`}
-            onClick={() => handleTabClick('findfc')}
-          >
-            <Link to="/">Home</Link>
-          </li>
-          <li
-            className={`navbar__item ${activeTab === 'gallery' ? 'active' : ''}`}
-            onClick={() => handleTabClick('gallery')}
-          >
-            <Link to="/gallery">Gallery</Link>
-          </li>
-          <li
-            className={`navbar__item ${activeTab === 'study-materials' ? 'active' : ''}`}
-            onClick={() => handleTabClick('study-materials')}
-          >
-            <Link to="/study-materials">Study Materials</Link>
-          </li>
-          <li
-            className={`navbar__item ${activeTab === 'map' ? 'active' : ''}`}
-            onClick={() => handleTabClick('map')}
-          >
-            <Link to="/map">Map</Link>
-          </li>
-        </ul>
       </div>
     </nav>
   );
