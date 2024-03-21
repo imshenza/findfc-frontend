@@ -64,12 +64,12 @@ const HomePage = () => {
         <div className="posters-section">
           {/* Display posters here */}
           {dynamicPoster}
-          {/* <Poster
+           <Poster
             imageUrl={"/images/img3.png"}
             time="10:00 AM"
             venue="Venue 1"
           />
-          <Poster
+         <Poster
             imageUrl={"/images/img3.png"}
             time="02:00 PM"
             venue="Venue 2"
@@ -78,7 +78,20 @@ const HomePage = () => {
             imageUrl={"/images/img3.png"}
             time="02:00 PM"
             venue="Venue 3"
-          /> */}
+          />
+           <Poster
+            imageUrl={"/images/img3.png"}
+            time="02:00 PM"
+            venue="Venue 3"
+          /><Poster
+          imageUrl={"/images/img3.png"}
+          time="02:00 PM"
+          venue="Venue 3"
+        /><Poster
+        imageUrl={"/images/img3.png"}
+        time="02:00 PM"
+        venue="Venue 3"
+      />
           {/* Add more posters as needed */}
         </div>
       </main>
