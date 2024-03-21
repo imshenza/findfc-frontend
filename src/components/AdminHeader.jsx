@@ -1,7 +1,7 @@
 // src/components/Header.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Make sure to import Link from 'react-router-dom'
-import "./AdminHeader.css"
+import "./Header.css"
 const AdminHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -10,25 +10,26 @@ const AdminHeader = () => {
   };
 
   return (
-    <header className="header">
-      <div className="mobile-header">
-        <Link to="/admin">
-        <div className="back-button">
-        back
-        </div>
-        </Link>
-        <div className="logo">
-          FIND-FC
-        </div>
-        <div className="login-button">
-          <Link to="/login">
-            <button id='login-button' onClick=''>LOGOUT</button>
-          </Link>
-        </div>
-      </div>
+    
+    <div><nav className="navbar"><div className="navbar__left">
+    <Link to="/admin">
+  <h6 id='btn'>BACK</h6>
+    
+    </Link>
+    </div>
+    <div className="navbar__center">
+    <Link to="/" className="navbar__logo">findfc</Link>
+  </div>
+  <div className="navbar__right">
+    <Link to='/login'>
+      <button className="navbar__button">Login</button>
+    </Link>
+  </div>
+</nav></div>
+      
 
      
-    </header>
+    
   );
 };
 

@@ -129,6 +129,7 @@ button {
 } */
 
 /* Common styles */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -238,4 +239,7 @@ button {
   .navbar__item {
     padding: 0 1rem;
   }
+}
+#btn{
+  text-decoration: none;
 }
