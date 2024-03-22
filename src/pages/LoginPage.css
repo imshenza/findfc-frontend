@@ -3,71 +3,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh; /* Full height of the viewport */
 }
 
 .border {
   border-radius: 10px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 400px; /* Adjust width as needed */
-  margin-top: 30px;
-}
-
-.p-6 {
+  width: 90%;
+  max-width: 300px; /* Decreased width */
+  margin: 0px auto 0; /* Updated margin-top */
   padding: 24px;
-}
-
-.bg-white {
-  background-color: #ffffff;
-}
-
-.dark:bg-gray-800 {
-  background-color: #1a202c;
-}
-
-.space-y-6 > * + * {
-  margin-top: 14px;
+  background-color: #fff; /* White background */
 }
 
 .text-xl {
-  font-size: 1.7rem; /* Increased font size */
-   
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .font-medium {
   font-weight: 700;
 }
 
-.text-gray-900 {
-  color: #333333;
-}
-
-.dark:text-white {
-  color: #ffffff;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-red-500 {
-  color: #e53e3e;
-}
-
-.form-group {
-  margin-bottom: 24px;
-}
-
 .label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-size: 1rem;
   color: #333;
 }
 
 .input {
   width: 90%;
-  padding: 10px; /* Decreased padding */
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
@@ -81,12 +51,12 @@
 
 .btn {
   display: block;
-  width: 200px; /* Adjust width as needed */
-  margin: 0 auto; /* Center horizontally */
-  padding: 14px; /* Increased padding */
+  width: 100%;
+  padding: 14px;
   background-color: #007bff;
   color: #ffffff;
-  /* Bold text */
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
   cursor: pointer;
