@@ -1,74 +1,106 @@
 import React, { useState } from "react";
 import "./PostUpload.css"; // Import CSS file for styling
 import AdminHeader from "../components/AdminHeader";
+import axios from "axios"; // Import Axios for making HTTP requests
 
 const PostUpload = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedDate, setSelectedDate] = useState("");
-  const [selectedTime, setSelectedTime] = useState("");
+  const [formData, setFormData] = useState({
+    image: null,
+    date: "",
+    time: "",
+    venue: "", // Added venue field
+  });
 
   const handleImageChange = (event) => {
     const imageFile = event.target.files[0];
     if (imageFile) {
       const reader = new FileReader();
       reader.onload = () => {
-        setSelectedImage(reader.result);
+        setFormData({ ...formData, image: reader.result });
       };
       reader.readAsDataURL(imageFile);
     }
   };
 
-  const handleDateChange = (event) => {
-    setSelectedDate(event.target.value);
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleTimeChange = (event) => {
-    setSelectedTime(event.target.value);
+  const handleUpload = async (e) => {
+    e.preventDefault();
+    const { image, date, time, venue } = formData;
+    const data = new FormData();
+    data.append("image", image);
+    data.append("date", date);
+    data.append("time", time);
+    data.append("venue", venue); // Appending venue value
+    try {
+      console.log("Uploading event data:", formData);
+      // Send POST request to Django backend using Axios
+      await axios.post(
+        "http://localhost:8000/adminDash/upload_event/",
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+
+      console.log(data);
+      // Handle successful upload
+    } catch (error) {
+      console.error("Error uploading event:", error);
+      // Handle error here, e.g., show error message to user
+    }
   };
 
   return (
     <div className="p">
-        <AdminHeader/>
-        <div className="post-upload">
-        
-      <div className="image-upload">
-        {selectedImage ? (
-          <img src={selectedImage} alt="Uploaded" />
-        ) : (
-          <label htmlFor="file-upload" className="custom-file-upload">
-            Select Image
-          </label>
-        )}
-        <input
-          id="file-upload"
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-        />
-      </div>
-      <div className="details">
-        <label>Date:</label>
-        <input
-          type="date"
-          value={selectedDate}
-          onChange={handleDateChange}
-        />
-        <label>Time:</label>
-        <input
-          type="time"
-          value={selectedTime}
-          onChange={handleTimeChange}
-        />
-        <button type="submit" value="Upload">UPLOAD</button>
-          {/* {selectedImage && (
-          <button className="upload-button" onClick={handleUpload}>
-            Upload
-          </button>
-        )} */}
+      <AdminHeader />
+      <div className="post-upload">
+        <div className="image-upload">
+          {formData.image ? (
+            <img src={formData.image} alt="Uploaded" />
+          ) : (
+            <label htmlFor="file-upload" className="custom-file-upload">
+              Select Image
+            </label>
+          )}
+          <input
+            id="file-upload"
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+          />
+        </div>
+        <div className="details">
+          <form onSubmit={handleUpload} className="max-w-lg">
+            <label>Venue:</label> {/* Added venue label and input */}
+            <input
+              type="text"
+              name="venue"
+              value={formData.venue}
+              onChange={handleInputChange}
+            />
+            <label>Date:</label>
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleInputChange}
+            />
+            <label>Time:</label>
+            <input
+              type="time"
+              name="time"
+              value={formData.time}
+              onChange={handleInputChange}
+            />
+            <button className="upload-button" type="submit">
+              UPLOAD
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-    </div>
-    
   );
 };
 

@@ -1,18 +1,16 @@
-// src/pages/HomePage.js
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Poster from "../components/Poster";
-import "./HomePage.css";
 import Header from "../components/Header";
-// import Navbar from "../components/Navbar";
+import "./HomePage.css";
 
 const HomePage = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [data, setData] = useState("");
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/");
+        const response = await fetch("http://127.0.0.1:8000/adminDash/");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -33,67 +31,25 @@ const HomePage = () => {
 
   const dynamicPoster =
     data && data.events
-      ? data.events.map((item) => {
-          return (
-            <Poster
-              key={item.id}
-              imageUrl={`http://localhost:8000${item.poster}`}
-              time={item.time}
-              venue={item.venue}
-            />
-          );
-        })
+      ? data.events.map((item) => (
+          <Poster
+            key={item.id}
+            imageUrl={`http://localhost:8000${item.poster}`}
+            time={item.time}
+            venue={item.venue}
+            date={item.date}
+          />
+        ))
       : null;
-
-  // const options = [
-  //   { id: 1, label: "Home", link: "/" },
-  //   { id: 2, label: "Study Materials", link: "/study-materials" },
-  //   { id: 3, label: "Gallery", link: "/gallery" },
-  //   { id: 4, label: "Maps", link: "/maps" }, // Add your maps link or route
-  // ];
 
   return (
     <div className="home">
       <Header />
-      {/* <Navbar /> }
-      {/* Posters */}
       <main>
         <div className="main-heading">
           <h1 id="events">TODAY'S EVENTS</h1>
         </div>
-        <div className="posters-section">
-          {/* Display posters here */}
-          {dynamicPoster}
-           {/* <Poster
-            imageUrl={"/images/img3.png"}
-            time="10:00 AM"
-            venue="Venue 1"
-          />
-         <Poster
-            imageUrl={"/images/img3.png"}
-            time="02:00 PM"
-            venue="Venue 2"
-          />
-          <Poster
-            imageUrl={"/images/img3.png"}
-            time="02:00 PM"
-            venue="Venue 3"
-          />
-           <Poster
-            imageUrl={"/images/img3.png"}
-            time="02:00 PM"
-            venue="Venue 3"
-          /><Poster
-          imageUrl={"/images/img3.png"}
-          time="02:00 PM"
-          venue="Venue 3"
-        /><Poster
-        imageUrl={"/images/img3.png"}
-        time="02:00 PM"
-        venue="Venue 3"
-      /> */}
-          {/* Add more posters as needed */}
-        </div>
+        <div className="posters-section">{dynamicPoster}</div>
       </main>
     </div>
   );
