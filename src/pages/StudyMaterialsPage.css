@@ -9,20 +9,20 @@
   text-align: center; /* Align contents to center */
 }
 
-form {
+.studyform {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 20px;
   align-items: center;
 }
 
-label {
+.labl {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-input,
-select {
+
+.selct {
   padding: 10px;
   border: 1px solid #ced4da;
   border-radius: 5px;
@@ -37,7 +37,7 @@ select:focus {
   border-color: #007bff;
 }
 
-button {
+.buton {
   border: none;
   border-radius: 5px;
   padding: 8px 20px;

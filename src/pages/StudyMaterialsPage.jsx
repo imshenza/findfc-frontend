@@ -53,27 +53,27 @@ const StudyMaterialsPage = () => {
       <Header />
       <div className="study-materials-page">
         <h2 id="study-mat-text">Study Materials</h2>
-        <form>
-          <label htmlFor="category">Category:</label>
-          <select id="category" value={selectedCategory} onChange={handleCategoryChange}>
+        <form className='studyform'>
+          <label htmlFor="category" className='labl'>Category:</label>
+          <select className='selct' id="category" value={selectedCategory} onChange={handleCategoryChange}>
             <option value="">Select Category</option>
             <option value="UG">UG</option>
             <option value="PG">PG</option>
           </select>
 
-          <label htmlFor="year">Year:</label>
-          <select id="year" value={selectedYear} onChange={handleYearChange}>
+          <label htmlFor="year" className='labl'>Year:</label>
+          <select className='selct' id="year" value={selectedYear} onChange={handleYearChange}>
             {yearOptions}
           </select>
 
-          <label htmlFor="type">Material Type:</label>
-          <select id="type" value={selectedType} onChange={handleTypeChange}>
+          <label htmlFor="type" className='labl'>Material Type:</label>
+          <select id="type" className='selct' value={selectedType} onChange={handleTypeChange}>
             <option value="">Select Material Type</option>
             <option value="Notes">Notes</option>
             <option value="Previous Year Papers">Previous Year Papers</option>
           </select>
 
-          <button type="button" id="study-mat-button" onClick={handleSubmit}>
+          <button className='buton' type="button" id="study-mat-button" onClick={handleSubmit}>
             Submit
           </button>
         </form>
