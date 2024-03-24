@@ -5,7 +5,7 @@ import "./HomePage.css";
 
 const HomePage = () => {
   const [showOptions, setShowOptions] = useState(false);
-  const [data, setData] = useState("");
+  const [events, setEvents] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,8 +15,7 @@ const HomePage = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        setData(data);
-        // Handle the data as needed...
+        setEvents(data.events); // Store events data in state
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -29,19 +28,6 @@ const HomePage = () => {
     setShowOptions(!showOptions);
   };
 
-  const dynamicPoster =
-    data && data.events
-      ? data.events.map((item) => (
-          <Poster
-            key={item.id}
-            imageUrl={`http://localhost:8000${item.poster}`}
-            time={item.time}
-            venue={item.venue}
-            date={item.date}
-          />
-        ))
-      : null;
-
   return (
     <div className="home">
       <Header />
@@ -49,7 +35,18 @@ const HomePage = () => {
         <div className="main-heading">
           <h1 id="events">TODAY'S EVENTS</h1>
         </div>
-        <div className="posters-section">{dynamicPoster}</div>
+        <div className="posters-section">
+          {events.map((event) => (
+            <Poster
+              key={event.id}
+              title={event.title} // Ensure that title is passed correctly
+              imageUrl={`http://localhost:8000${event.poster}`}
+              time={event.time}
+              venue={event.venue}
+              date={event.date}
+            />
+          ))}
+        </div>
       </main>
     </div>
   );

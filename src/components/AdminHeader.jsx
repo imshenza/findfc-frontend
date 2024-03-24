@@ -1,14 +1,14 @@
 // src/components/AdminHeader.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './AdminHeader.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./AdminHeader.css";
 
 const AdminHeader = () => {
   return (
     <div>
       <nav className="navbar">
         <div className="navbar__left">
-          <Link to="/admin" className="back-btn">
+          <Link to="/adminn" className="back-btn">
             &#8592; Back
           </Link>
         </div>

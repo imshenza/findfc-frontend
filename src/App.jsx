@@ -18,7 +18,6 @@ import GallView from "./pages/GallView";
 import StudyUpload from "./pages/StudyUpload";
 import StudyView from "./pages/StudyView";
 
-
 function App() {
   return (
     <Router>
@@ -29,8 +28,8 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/test" element={<TestPage />} />
-        <Route path="/admin" element={<AdminHome />} />
-        <Route path="/posterup" element={<AdPosterPage />} /> 
+        <Route path="login/admin/:id" element={<AdminHome />} />
+        <Route path="/posterup" element={<AdPosterPage />} />
         <Route path="/studyup" element={<AdStudyMaterialPage />} />
         <Route path="/galleryup" element={<AdGalleryPage />} />
         <Route path="/posterupload" element={<PostUpload />} />

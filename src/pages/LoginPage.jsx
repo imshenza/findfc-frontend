@@ -1,38 +1,94 @@
 // src/pages/LoginPage.js
-import React from 'react';
-import Header from '../components/Header';
-import './LoginPage.css';
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import Header from "../components/Header";
+import "./LoginPage.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-  const SubmitEvent = () => {
-    // Handle submit logic here
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const [error, setError] = useState(""); // State to store error message
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    try {
+      const response = await fetch("http://127.0.0.1:8000/adminDash/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        console.log(data);
+        // setIsLoggedIn(true);
+        navigate(`admin/${data.user_id}`);
+        // window.location.href = '/';
+      } else {
+        setError(data.message);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
     <div>
       <Header />
-      <div className='loginpage'>
-        <h1 className='head'>Login</h1>
-        <form action="">
-          <div className="form-group">
-            <label htmlFor="username">Username:</label>
-            <input type="text" name='username' placeholder='Enter your username' />
-          </div> <br />
-
-          <div className="form-group">
-            <label htmlFor="password">Password:</label>
-            <input type="password" name='password' placeholder='Enter your password' />
-          </div> <br />
-          <Link to="/admin">
-            <button type="button" onClick={SubmitEvent}>
-              Submit
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="border rounded-lg p-6 bg-white dark:bg-gray-800">
+          <form className="space-y-6 max-w-md mx-auto" onSubmit={handleSubmit}>
+            <h3 className="text-xl font-medium text-gray-900 dark:text-white text-center">
+              Login
+            </h3>
+            {error && <div className="text-red-500">{error}</div>}
+            <div className="form-group">
+              <label htmlFor="username" className="label">
+                Username:
+              </label>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                value={formData.username}
+                onChange={handleChange}
+                className="input"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password" className="label">
+                Password:
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={formData.password}
+                onChange={handleChange}
+                className="input"
+                placeholder="••••••••"
+                required
+              />
+            </div>
+            <button type="submit" className="btn">
+              Login
             </button>
-          </Link>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default LoginPage;
