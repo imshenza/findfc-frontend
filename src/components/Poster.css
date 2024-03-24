@@ -42,3 +42,9 @@
     margin: 10px;
   }
 }
+.viewbtn{
+  width: 70%;
+}
+.editbtn{
+  display: flex;
+}

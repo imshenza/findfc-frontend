@@ -9,8 +9,8 @@ const PosterVw = ({ title, time, venue, imageUrl }) => {
         <p id='poster-details-text'>Time: {time}</p>
         <p id="poster-details-text">Venue: {venue}</p>
         <div className="editbtn">
-        <input type="button" value="edit" />
-        <input type="button" value='delete' />
+        <input type="button" className='viewbtn' value="edit" />
+        <input type="button" className='viewbtn' value='delete' />
         </div>
         
       </div>
