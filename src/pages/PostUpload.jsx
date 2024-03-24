@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AdminHeader from "../components/AdminHeader";
 import axios from "axios";
-import "./PosterUpPage.css";
+import "./PostUpload.css";
 
 const PosterUpPage = () => {
   const [formData, setFormData] = useState({

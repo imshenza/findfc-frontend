@@ -27,7 +27,7 @@ const PostView = () => {
     setShowOptions(!showOptions);
   };
 
-  const dynamicPoster =
+  const dynamicPosterview =
     data && data.events
       ? data.events.map((item) => {
           return (
@@ -44,7 +44,7 @@ const PostView = () => {
     <div>
       <AdminHeader/>
      <div className="posters-section">
-     {dynamicPoster}
+     {dynamicPosterview}
      {/* <PosterVw
             imageUrl={"/images/books.png"}
             time="02:00 PM"

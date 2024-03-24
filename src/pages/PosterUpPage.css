@@ -1,6 +1,66 @@
-.upl{
-    margin-left: 31rem;
-    align-items: center;
-}
-.labels{
-}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+  }
+  
+  .upl {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .labels {
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #333;
+  }
+  
+  input[type="file"],
+  input[type="text"],
+  input[type="date"],
+  input[type="time"],
+  button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  input[type="file"] {
+    cursor: pointer;
+  }
+  
+  button {
+    background-color: #3897f0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2680c2;
+  }
+  
+  @media (max-width: 768px) {
+    .upl {
+      padding: 16px;
+    }
+  
+    input[type="file"],
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+
+  
