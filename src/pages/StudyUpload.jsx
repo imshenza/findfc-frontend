@@ -8,6 +8,7 @@ const StudyUpload = () => {
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedDepartment, setSelectedDepartment] = useState("");
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
@@ -26,12 +27,17 @@ const StudyUpload = () => {
     setSelectedFile(event.target.files[0]);
   };
 
+  const handleDepartmentChange = (event) => {
+    setSelectedDepartment(event.target.value);
+  };
+
   const handleSubmit = async () => {
     const formData = new FormData();
     formData.append("category", selectedCategory);
     formData.append("year", selectedYear);
     formData.append("type", selectedType);
     formData.append("file", selectedFile);
+    formData.append("department", selectedDepartment);
 
     try {
       const response = await axios.post(
@@ -111,6 +117,26 @@ const StudyUpload = () => {
               <option value="">Select Material Type</option>
               <option value="Notes">Notes</option>
               <option value="Previous Year Papers">Previous Year Papers</option>
+            </select>
+          </label>
+
+          <label>
+            Department:
+            <select
+              className="values"
+              value={selectedDepartment}
+              onChange={handleDepartmentChange}
+            >
+              <option value="">Select Department</option>
+              <option value="CS">CS</option>
+              <option value="PHYSICS">PHYSICS</option>
+              <option value="CHEMISTRY">CHEMISTRY</option>
+              <option value="ZOOLOGY">ZOOLOGY</option>
+              <option value="BOTANY">BOTANY</option>
+              <option value="STATISTICS">STATISTICS</option>
+              <option value="MATHS">MATHS</option>
+              <option value="COMMERCE">COMMERCE</option>
+              <option value="ENGLISH">ENGLISH</option>
             </select>
           </label>
 

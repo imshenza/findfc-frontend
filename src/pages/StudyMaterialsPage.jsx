@@ -6,6 +6,7 @@ const StudyMaterialsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedType, setSelectedType] = useState("");
+  const [selectedDepartment, setSelectedDepartment] = useState("");
   const [studyMaterials, setStudyMaterials] = useState([]);
 
   const handleCategoryChange = (event) => {
@@ -21,15 +22,19 @@ const StudyMaterialsPage = () => {
     setSelectedType(event.target.value);
   };
 
-  const handleSubmit = () => {
-    // Handle the submission logic (fetch study materials based on selected options)
-    fetchStudyMaterials(selectedCategory, selectedYear, selectedType);
+  const handleDepartmentChange = (event) => {
+    setSelectedDepartment(event.target.value);
   };
 
-  const fetchStudyMaterials = async (category, year, type) => {
+  const handleSubmit = () => {
+    // Handle the submission logic (fetch study materials based on selected options)
+    fetchStudyMaterials(selectedCategory, selectedYear, selectedType, selectedDepartment);
+  };
+
+  const fetchStudyMaterials = async (category, year, type, department) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/study-materials/?category=${category}&year=${year}&type=${type}`
+        `http://localhost:8000/study-materials/?category=${category}&year=${year}&type=${type}&department=${department}`
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -42,8 +47,8 @@ const StudyMaterialsPage = () => {
   };
 
   useEffect(() => {
-    fetchStudyMaterials(selectedCategory, selectedYear, selectedType);
-  }, [selectedCategory, selectedYear, selectedType]);
+    fetchStudyMaterials(selectedCategory, selectedYear, selectedType, selectedDepartment);
+  }, [selectedCategory, selectedYear, selectedType, selectedDepartment]);
 
   // Define the options for Year based on selected Category
   let yearOptions = (
@@ -109,6 +114,27 @@ const StudyMaterialsPage = () => {
             <option value="">Select Material Type</option>
             <option value="Notes">Notes</option>
             <option value="Previous Year Papers">Previous Year Papers</option>
+          </select>
+
+          <label htmlFor="department" className="labl">
+            Department:
+          </label>
+          <select
+            id="department"
+            className="selct"
+            value={selectedDepartment}
+            onChange={handleDepartmentChange}
+          >
+            <option value="">Select Department</option>
+            <option value="CS">CS</option>
+            <option value="PHYSICS">PHYSICS</option>
+            <option value="CHEMISTRY">CHEMISTRY</option>
+            <option value="ZOOLOGY">ZOOLOGY</option>
+            <option value="BOTANY">BOTANY</option>
+            <option value="STATISTICS">STATISTICS</option>
+            <option value="MATHS">MATHS</option>
+            <option value="COMMERCE">COMMERCE</option>
+            <option value="ENGLISH">ENGLISH</option>
           </select>
 
           <button
