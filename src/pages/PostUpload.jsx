@@ -95,7 +95,7 @@ const PosterUpPage = () => {
             onChange={handleInputChange}
           />
           <br />
-          <button type="submit">Upload</button>
+          <button className="uplod-btn" type="submit">Upload</button>
         </form>
       </div>
     </div>

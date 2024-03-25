@@ -30,7 +30,7 @@
   .upload-button {
     display: block;
     width: 100%;
-    
+    padding: 8px;
     background-color: #3897f0;
     color: #fff;
     border: none;
