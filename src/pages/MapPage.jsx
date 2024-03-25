@@ -62,6 +62,14 @@ const MapPage = () => {
      
       <h1>College Map</h1>
       <div>
+        {selectedArea && (
+          <div>
+            <button onClick={() => setSelectedArea(null)}>Close</button>
+            {renderAreaInfo()}
+          </div>
+        )}
+      </div>
+      <div>
         <div style={{ position: 'relative' }}>
           <img
             src="map.jpg"
@@ -282,14 +290,7 @@ const MapPage = () => {
           </map>
         </div>
       </div>
-      <div>
-        {selectedArea && (
-          <div>
-            <button onClick={() => setSelectedArea(null)}>Close</button>
-            {renderAreaInfo()}
-          </div>
-        )}
-      </div>
+  
     </div>
   );
 };
